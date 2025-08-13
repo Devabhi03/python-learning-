@@ -1,7 +1,8 @@
 ﻿# Python Learning Projects 
 
 
-Titanic Survival Prediction
+##Titanic Survival Prediction
+
 This project uses machine learning to predict whether a passenger on the RMS Titanic survived the infamous 1912 disaster. The prediction is based on passenger data, and the model is built using a Logistic Regression algorithm.
 
 📋 Table of Contents
@@ -117,3 +118,4 @@ if(res == 0):
 else:
   print("Survived")
 This demonstrates the model's ability to classify passengers based on the selected features. The model's performance shows a clear correlation where female passengers had a 100% survival rate in the test data, while male passengers did not.
+
