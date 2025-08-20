@@ -174,6 +174,108 @@ This equation indicates that for every additional $1000 spent on TV advertising,
 
 -----
 
-### ✍️ Author
+# 3\. Iris Flower Classification Using K-Means Clustering 🌸
 
-  * **ABHINANDAN KESARWANI**
+This project demonstrates how to classify the Iris flower dataset using the K-Means Clustering algorithm, an unsupervised machine learning technique. The goal is to group the flowers into three distinct clusters corresponding to the three species of Iris (Setosa, Versicolor, and Virginica) based on their petal and sepal measurements.
+
+---
+
+## 📋 Table of Contents
+
+- [Project Overview](#-project-overview)
+- [Dataset](#-dataset)
+- [Workflow](#-workflow)
+- [Technologies and Libraries Used](#-technologies-and-libraries-used)
+- [Setup and Usage](#-setup-and-usage)
+- [Results](#-results)
+- [Author](#-author)
+
+---
+
+## 🔭 Project Overview
+
+The Iris flower dataset is a classic in the field of machine learning. This project uses K-Means to cluster the data into three groups. The process includes data loading, preprocessing, determining the optimal number of clusters using the Elbow Method, and evaluating the model's performance with a confusion matrix.
+
+
+---
+
+## 💾 Dataset
+
+The project utilizes the well-known **Iris dataset**, loaded directly from the Seaborn library. It consists of 150 samples from three species of Iris flowers.
+
+The features in the dataset are:
+* **`sepal_length`**: Length of the sepal in cm.
+* **`sepal_width`**: Width of the sepal in cm.
+* **`petal_length`**: Length of the petal in cm.
+* **`petal_width`**: Width of the petal in cm.
+
+The target variable is:
+* **`species`**: The species of the Iris flower (Setosa, Versicolor, Virginica).
+
+---
+
+## ⚙️ Project Workflow
+
+The project follows these steps:
+
+1.  **Data Loading & Preprocessing**:
+    * The Iris dataset is loaded using Seaborn.
+    * The categorical `species` column is converted to numerical labels (0 for Setosa, 1 for Versicolor, 2 for Virginica) using `pd.factorize`.
+2.  **Exploratory Data Analysis (EDA)**:
+    * 3D scatter plots are created to visualize the relationships between sepal/petal dimensions and the different species.
+    * A 2D scatter plot focusing on `petal_length` and `petal_width` is generated, which clearly shows the natural clustering of the data.
+3.  **Determining Optimal Clusters (Elbow Method)**:
+    * The K-Means algorithm is run for a range of `k` values (1 to 9).
+    * The **Sum of Squared Errors (SSE)** for each `k` is calculated and plotted.
+    * The "elbow" of the plot occurs at **k=3**, indicating that three clusters is the optimal choice for this dataset.
+4.  **K-Means Model Training**:
+    * The K-Means model is trained with `n_clusters=3` on the `petal_length` and `petal_width` features.
+    * The model assigns a cluster label to each data point.
+5.  **Model Evaluation**:
+    * A **confusion matrix** is created to compare the true species labels with the cluster labels assigned by the model.
+    * The matrix shows that the model performs very well, correctly clustering all 50 Setosa samples and achieving high accuracy for Versicolor and Virginica, with only a few misclassifications between them.
+
+---
+
+## 🛠️ Technologies and Libraries Used
+
+* **Python**
+* **Pandas**: For data manipulation and analysis.
+* **NumPy**: For numerical computations.
+* **Matplotlib & Seaborn**: For data visualization.
+* **Scikit-learn**: For implementing the `KMeans` clustering algorithm and generating the `confusion_matrix`.
+* **Jupyter Notebook**: For creating the analysis notebook.
+
+---
+
+## 🚀 Setup and Usage
+
+To run this project on your local machine, follow these steps:
+
+1.  **Clone the repository or download the project files.**
+
+2.  **Install the necessary libraries** by running the following command in your terminal:
+    ```bash
+    pip install numpy pandas matplotlib seaborn scikit-learn
+    ```
+
+3.  **Run the Jupyter Notebook** `iris_flower_classification (1).ipynb` in your preferred environment. Execute the cells to see the complete analysis and results.
+
+---
+
+## ✅ Results
+
+The K-Means clustering algorithm successfully grouped the Iris flowers into three distinct clusters with high accuracy. The confusion matrix shows:
+- **Setosa**: 50/50 samples were correctly clustered.
+- **Versicolor**: 48/50 samples were correctly clustered.
+- **Virginica**: 46/50 samples were correctly clustered.
+
+This result demonstrates that even without using the species labels during training (unsupervised learning), the `petal_length` and `petal_width` features are strong indicators for classifying the Iris species.
+
+---
+
+## ✍️ Author
+
+* **ABHINANDAN KESARWANI**
+
+
